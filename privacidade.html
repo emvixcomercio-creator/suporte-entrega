@@ -1,0 +1,266 @@
+<title>Privacidade do Suporte Entrega</title>
+<style>
+  :root{
+    --bg:#F7F6F2;
+    --surface:#FFFFFF;
+    --ink:#211D15;
+    --ink-muted:#6B6152;
+    --accent:#B4790C;
+    --accent-soft:#FBEBC9;
+    --border:#E5E0D2;
+    --mono-bg:#F1EEE3;
+    --ok:#2E7D46;
+    --no:#B23A3A;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#17140F;
+      --surface:#211D16;
+      --ink:#F1EDE2;
+      --ink-muted:#B4AB97;
+      --accent:#E8B34D;
+      --accent-soft:#3B2E12;
+      --border:#3A3327;
+      --mono-bg:#2A241A;
+      --ok:#6FCF8C;
+      --no:#E37B7B;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#17140F;
+    --surface:#211D16;
+    --ink:#F1EDE2;
+    --ink-muted:#B4AB97;
+    --accent:#E8B34D;
+    --accent-soft:#3B2E12;
+    --border:#3A3327;
+    --mono-bg:#2A241A;
+    --ok:#6FCF8C;
+    --no:#E37B7B;
+  }
+
+  * { box-sizing: border-box; }
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', system-ui, sans-serif;
+    padding-inline:16px;
+    padding-block:48px;
+    line-height:1.6;
+  }
+  .page{
+    max-width:700px;
+    margin:0 auto;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:12px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:14px;
+  }
+  .eyebrow .dot{ width:6px; height:6px; border-radius:50%; background:var(--accent); }
+  h1{
+    font-size:clamp(28px,5vw,38px);
+    line-height:1.15;
+    letter-spacing:-.01em;
+    margin:0 0 6px;
+    text-wrap:balance;
+  }
+  .updated{
+    color:var(--ink-muted);
+    font-size:13px;
+    margin:0 0 36px;
+  }
+  .lead{
+    font-size:16px;
+    color:var(--ink);
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:18px 20px;
+    margin-bottom:40px;
+  }
+  h2{
+    font-size:20px;
+    letter-spacing:-.005em;
+    margin:44px 0 14px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--border);
+  }
+  h2 .num{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    color:var(--accent);
+    font-weight:500;
+    margin-right:10px;
+  }
+  p{ margin:0 0 14px; max-width:65ch; }
+  ul{ margin:0 0 14px; padding-left:20px; }
+  li{ margin-bottom:8px; max-width:62ch; }
+  strong{ font-weight:600; }
+
+  .grant{
+    display:grid;
+    gap:10px;
+    margin:18px 0 24px;
+  }
+  .grant-item{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:14px 16px;
+  }
+  .grant-item .perm{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:12.5px;
+    color:var(--accent);
+    background:var(--accent-soft);
+    display:inline-block;
+    padding:2px 8px;
+    border-radius:5px;
+    margin-bottom:8px;
+  }
+  .grant-item p{ margin:0; font-size:14.5px; color:var(--ink); }
+
+  .stance{
+    display:grid;
+    gap:8px;
+    margin:18px 0 24px;
+  }
+  .stance li{
+    list-style:none;
+    margin:0;
+    display:flex;
+    gap:10px;
+    align-items:baseline;
+    font-size:14.5px;
+    max-width:62ch;
+  }
+  .stance li::before{
+    content:'✕';
+    color:var(--no);
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:12px;
+    flex:none;
+  }
+  .stance{ padding-left:0; }
+
+  .contact{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:18px 20px;
+    margin-top:44px;
+  }
+  .contact a{ color:var(--accent); }
+  .placeholder{
+    background:var(--accent-soft);
+    color:var(--accent);
+    padding:1px 6px;
+    border-radius:4px;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.92em;
+  }
+
+  footer{
+    margin-top:56px;
+    padding-top:20px;
+    border-top:1px solid var(--border);
+    color:var(--ink-muted);
+    font-size:12.5px;
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<div class="page">
+  <div class="eyebrow"><span class="dot"></span>Extensão para Chrome</div>
+  <h1>Política de privacidade do Suporte Entrega</h1>
+  <p class="updated">Última atualização: 24 de setembro de 2026 · versão da extensão 0.4.0</p>
+
+  <div class="lead">
+    O Suporte Entrega ajuda o lojista a repassar pedidos do Zé Delivery ao grupo de motoboys no WhatsApp Web,
+    montar a rota de cada entregador e pedir o telefone do cliente só quando o motoboy avisa que não o encontra.
+    Todo o processamento acontece no navegador do próprio lojista. Esta página explica exatamente o quê,
+    de onde e por quê.
+  </div>
+
+  <h2><span class="num">01</span>O que a extensão lê e por quê</h2>
+  <p>Cada permissão pedida no <code>manifest.json</code> existe para uma tarefa específica do painel. Nenhuma delas é usada para nada além do que está descrito aqui.</p>
+  <div class="grant">
+    <div class="grant-item">
+      <span class="perm">host: seu.ze.delivery</span>
+      <p>Lê a lista de pedidos ativos e os dados da loja que já aparecem na tela do lojista, observando as respostas que o próprio painel do Zé recebe (GraphQL). A extensão não altera nem envia nenhuma requisição ao Zé: só lê o que a tela já mostrou.</p>
+    </div>
+    <div class="grant-item">
+      <span class="perm">host: web.whatsapp.com</span>
+      <p>Escreve a mensagem pronta na caixa de texto do grupo de motoboys escolhido pelo lojista, e lê apenas as mensagens novas (dos últimos 3 minutos) desse grupo, só para identificar pedidos de suporte como "não atende" ou "não encontrei o cliente". Histórico antigo e outras conversas não são lidos.</p>
+    </div>
+    <div class="grant-item">
+      <span class="perm">debugger</span>
+      <p>Usada só durante o fluxo "Sem contato", para simular um clique de mouse de verdade na tela do Zé Delivery (a tela ignora cliques criados por código) e abrir a janela onde o telefone do cliente aparece. O Chrome mostra seu próprio aviso ("Suporte Entrega começou a depurar este navegador") enquanto isso, e a extensão se desconecta assim que termina de ler o telefone.</p>
+    </div>
+    <div class="grant-item">
+      <span class="perm">storage</span>
+      <p>Guarda as opções do lojista (nome do grupo, prazos de entrega) e os números dos pedidos já anunciados, para não repetir a mesma mensagem ao recarregar a página. Essas opções ficam no armazenamento do próprio Chrome, sincronizado pela conta Google do lojista, e não passam por nenhum servidor nosso.</p>
+    </div>
+    <div class="grant-item">
+      <span class="perm">tabs</span>
+      <p>Encontra a aba do WhatsApp Web e a aba do Zé Delivery abertas no navegador, para passar mensagens entre o painel e o grupo.</p>
+    </div>
+  </div>
+
+  <h2><span class="num">02</span>Dados de pedido e do cliente</h2>
+  <p>
+    O telefone do cliente <strong>não é buscado em todo pedido</strong>. Só quando existe um motivo real: o motoboy avisou
+    no grupo que não encontrou o cliente, ou o lojista confirmou isso clicando em "Sem contato" no painel. O telefone
+    existe apenas na memória do navegador, o tempo necessário para montar a mensagem, e nunca é gravado em disco.
+  </p>
+  <p>
+    Nome, endereço e número do pedido aparecem nas mensagens que o próprio lojista manda ao grupo, como já acontecia
+    manualmente antes da extensão existir. Qualquer pessoa que já estivesse nesse grupo continua vendo essas informações,
+    exatamente como via antes.
+  </p>
+
+  <h2><span class="num">03</span>O que o Suporte Entrega não faz</h2>
+  <ul class="stance">
+    <li>Não envia pedidos, mensagens ou dados de clientes para servidores nossos ou de terceiros (o servidor recebe só o cadastro descrito no item 04).</li>
+    <li>Não usa rastreadores, analytics de comportamento ou publicidade.</li>
+    <li>Não vende, aluga nem compartilha dados com ninguém.</li>
+    <li>Não lê conversas fora do grupo de motoboys escolhido nas opções.</li>
+    <li>Não guarda histórico de mensagens, só os números dos pedidos já anunciados, para evitar repetição.</li>
+  </ul>
+
+  <h2><span class="num">04</span>Cadastro e licença de uso</h2>
+  <p>
+    Para usar a extensão, o lojista informa o e-mail da loja. A extensão envia ao servidor do Suporte Entrega
+    (suporte-entrega.onrender.com) apenas esse e-mail, o nome da loja como aparece no painel do Seu Zé e um
+    identificador aleatório do computador (gerado localmente, sem relação com a identidade de ninguém). Isso serve só
+    para controlar o teste grátis, a assinatura e o limite de computadores por e-mail. O servidor devolve a situação
+    da licença, o valor e os dados de pagamento. Nenhum dado de pedido ou de cliente é enviado.
+  </p>
+  <p>
+    O e-mail é usado apenas para identificar a assinatura e, se necessário, para o suporte entrar em contato. Não é
+    vendido, compartilhado nem usado para propaganda. Para apagar o cadastro, escreva para o e-mail abaixo.
+  </p>
+
+  <h2><span class="num">05</span>Onde os dados ficam</h2>
+  <p>
+    Tudo fica no navegador Chrome do lojista: as opções e os pedidos já anunciados ficam em <code>chrome.storage</code>,
+    sincronizados pela infraestrutura da própria Google junto com a conta do usuário no Chrome. O Suporte Entrega não
+    guarda esses dados em servidor próprio. No servidor ficam só o e-mail, o nome da loja e os identificadores dos
+    computadores cadastrados.
+  </p>
+
+  <div class="contact">
+    <strong>Dúvidas sobre esta política?</strong>
+    <p style="margin-top:8px">Escreva para <a href="mailto:emvixcomercio@gmail.com">emvixcomercio@gmail.com</a>. Se esta extensão mudar o que lê ou envia, esta página é atualizada e a data no topo muda.</p>
+  </div>
+
+  <footer>Suporte Entrega é uma extensão independente para Chrome; não tem relação oficial com o Zé Delivery ou o WhatsApp.</footer>
+</div>
