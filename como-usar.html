@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Como usar o Suporte Entrega</title>
-<meta name="description" content="Passo a passo para instalar e configurar o Suporte Entrega: cadastro pelo e-mail, grupo dos motoboys, prazos, voz e assinatura.">
+<meta name="description" content="Passo a passo para instalar e configurar o Suporte Entrega: cadastro pelo e-mail, com ou sem grupo de motoboys, prazos, voz e assinatura.">
 <link rel="icon" href="img/icone-128.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap">
@@ -43,7 +43,7 @@
   <div class="topo" style="padding-top:40px">
     <span class="tag">Passo a passo</span>
     <h1>Como usar o Suporte Entrega</h1>
-    <p class="lead" style="margin:0">Da instalação ao primeiro pedido no grupo. Leva uns 5 minutos. <a href="./#video">Veja o vídeo de 45 segundos</a>.</p>
+    <p class="lead" style="margin:0">Da instalação ao primeiro pedido avisado. Leva uns 5 minutos. <a href="./#video">Veja o vídeo de 45 segundos</a>.</p>
   </div>
 
   <div class="guia">
@@ -79,7 +79,12 @@
 
       <section class="etapa" id="grupo">
         <h2><span class="n">3</span>Configurar pelo painel amarelo</h2>
-        <p>Depois do e-mail, o próprio painel amarelo mostra um passo a passo com botões. É só seguir:</p>
+        <p>Depois do e-mail, o próprio painel amarelo mostra um passo a passo com botões. A primeira pergunta é <b>como os motoboys falam com a loja</b>:</p>
+        <ul>
+          <li><b>Grupo</b>: pedidos, atrasos e rotas vão para o grupo dos motoboys no WhatsApp.</li>
+          <li><b>Individual</b>: a loja não tem grupo. Nada é mandado em grupo, a voz avisa a loja e cada motoboy pede o telefone do cliente no WhatsApp particular da loja.</li>
+        </ul>
+        <p>Escolheu <b>Grupo</b>? Siga os botões:</p>
         <ol>
           <li><b>Abrir WhatsApp Web</b>: abre o WhatsApp Web neste Chrome. Entre no grupo dos motoboys.</li>
           <li><b>Usar o grupo aberto agora</b>: a extensão guarda o nome do grupo.</li>
@@ -87,14 +92,16 @@
           <li><b>Mandar o aviso no grupo</b>: explica aos motoboys como pedir o telefone do cliente.</li>
           <li><b>Pronto, concluir</b>.</li>
         </ol>
+        <p>Escolheu <b>Individual</b>? São só três botões: <b>Abrir WhatsApp Web</b> (deixe a aba conectada, é por ela que a extensão lê as mensagens dos motoboys), <b>Copiar o aviso</b> (cole e mande para cada motoboy) e <b>Pronto, concluir</b>.</p>
         <p class="dica"><b>Depois disso</b>, o grupo não precisa ficar aberto: a extensão abre o grupo sozinha para mandar a mensagem e volta para a conversa em que você estava. Usa o WhatsApp pelo aplicativo do computador? Pode continuar usando: o WhatsApp Web fica conectado junto (leia o QR code uma vez no celular, em Aparelhos conectados), e se a aba dele for fechada a extensão abre de novo sozinha, fixada no canto. Para mudar alguma coisa, clique em <b>Configurar</b>, no rodapé do painel amarelo.</p>
       </section>
 
       <section class="etapa" id="motoboys">
         <h2><span class="n">4</span>Combinar com os motoboys</h2>
-        <p>Avise o grupo: quando não encontrarem o cliente, escrevem a palavra <b>suporte</b> e o número do pedido. Por exemplo:</p>
+        <p>Avise os motoboys: quando não encontrarem o cliente, escrevem a palavra <b>suporte</b> e o número do pedido. Por exemplo:</p>
         <p><code>suporte 123456789</code></p>
-        <p>A extensão reconhece a mensagem, busca o telefone do cliente no Seu Zé e responde no grupo. Também funciona com o primeiro nome do cliente, se só um pedido em entrega tiver esse nome.</p>
+        <p><b>Com grupo</b>, eles escrevem no grupo. A extensão reconhece a mensagem, busca o telefone do cliente no Seu Zé e responde no grupo. Também funciona com o primeiro nome do cliente, se só um pedido em entrega tiver esse nome.</p>
+        <p><b>Sem grupo</b>, eles mandam no WhatsApp particular da loja, com o <b>número completo</b> do pedido. A extensão responde na conversa do próprio motoboy. Por segurança, só vale o número completo de um pedido que está em entrega, porque clientes também escrevem para a loja.</p>
         <p class="dica"><b>Aviso do Chrome:</b> na hora de buscar o telefone aparece por alguns segundos a faixa "Suporte Entrega começou a depurar este navegador". É normal e some sozinha.</p>
       </section>
 
@@ -103,7 +110,7 @@
         <p>Nas <b>Opções</b> você ajusta:</p>
         <ul>
           <li>Prazo para <b>sair da loja</b> e para <b>entregar</b> (Comum e Turbo). O padrão é 10 e 35 minutos no Comum, 5 e 15 minutos no Turbo.</li>
-          <li>Quantos minutos antes do prazo o grupo recebe o aviso de "quase atrasando".</li>
+          <li>Quantos minutos antes do prazo o grupo recebe o aviso de "quase atrasando" (só no modo grupo).</li>
           <li>De quanto em quanto tempo o <b>ATRASO</b> é repetido, até o pedido ser entregue.</li>
           <li><b>Enviar sozinho</b> ou só deixar o texto pronto para você apertar <kbd>Enter</kbd>.</li>
           <li><b>Voz</b>: clique em <b>Testar som</b> para conferir se o computador está com o som ligado.</li>
@@ -113,7 +120,7 @@
       <section class="etapa" id="dia">
         <h2><span class="n">6</span>No dia a dia</h2>
         <ul>
-          <li>O painel amarelo mostra os pedidos em andamento, com os botões <b>Enviar no grupo</b> e <b>Sem contato</b>, e as rotas de quem tem 2 ou mais pedidos.</li>
+          <li>O painel amarelo mostra os pedidos em andamento, com os botões <b>Enviar no grupo</b> e <b>Sem contato</b>, e as rotas de quem tem 2 ou mais pedidos. No modo individual, o botão <b>Sem contato</b> mostra o telefone do cliente no painel e já deixa copiado.</li>
           <li>O painel pode ser <b>arrastado</b> pela faixa amarela para qualquer lugar da tela. Um clique na faixa abre e fecha.</li>
           <li>Na impressão do pedido o painel some sozinho, para não cobrir o QR code.</li>
           <li>Pedidos de <b>retirada no balcão</b> são ignorados: não aparecem no painel e não vão para o grupo.</li>
@@ -133,6 +140,7 @@
       <section class="etapa" id="problemas">
         <h2><span class="n">8</span>Se algo não funcionar</h2>
         <ul>
+          <li><b>O motoboy pediu suporte no particular e não recebeu nada:</b> confira se o modo <b>Individual</b> está escolhido, se a aba do WhatsApp Web está conectada e se ele mandou o número completo do pedido.</li>
           <li><b>Não mandou nada no grupo:</b> confira se o WhatsApp Web está aberto no mesmo Chrome e se o nome do grupo está certo (botão <b>Configurar</b> no painel amarelo). Fixar o grupo no topo da lista de conversas ajuda.</li>
           <li><b>O painel sumiu ou parou:</b> aperte <kbd>F5</kbd> na aba do Seu Zé e na do WhatsApp Web.</li>
           <li><b>"Este e-mail já está em uso em 2 computadores":</b> chame no WhatsApp que a gente libera o computador novo.</li>

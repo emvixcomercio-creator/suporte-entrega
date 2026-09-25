@@ -181,10 +181,10 @@
 <div class="page">
   <div class="eyebrow"><span class="dot"></span>Extensão para Chrome</div>
   <h1>Política de privacidade do Suporte Entrega</h1>
-  <p class="updated">Última atualização: 24 de setembro de 2026 · versão da extensão 0.4.0</p>
+  <p class="updated">Última atualização: 25 de setembro de 2026 · versão da extensão 0.4.6</p>
 
   <div class="lead">
-    O Suporte Entrega ajuda o lojista a repassar pedidos do Zé Delivery ao grupo de motoboys no WhatsApp Web,
+    O Suporte Entrega ajuda o lojista a repassar pedidos do Zé Delivery aos motoboys pelo WhatsApp Web (num grupo ou, no modo individual, na conversa de quem pede),
     montar a rota de cada entregador e pedir o telefone do cliente só quando o motoboy avisa que não o encontra.
     Todo o processamento acontece no navegador do próprio lojista. Esta página explica exatamente o quê,
     de onde e por quê.
@@ -195,11 +195,12 @@
   <div class="grant">
     <div class="grant-item">
       <span class="perm">host: seu.ze.delivery</span>
-      <p>Lê a lista de pedidos ativos e os dados da loja que já aparecem na tela do lojista, observando as respostas que o próprio painel do Zé recebe (GraphQL). A extensão não altera nem envia nenhuma requisição ao Zé: só lê o que a tela já mostrou.</p>
+      <p>Lê a lista de pedidos ativos e os dados da loja que já aparecem na tela do lojista, observando as respostas que o próprio painel do Zé recebe (GraphQL). A extensão não altera nada no Zé. A única requisição que ela faz é repetir a mesma consulta da lista de pedidos que o próprio painel já faz, quando um pedido novo aparece na tela antes de a lista ser atualizada, para o aviso não atrasar.</p>
     </div>
     <div class="grant-item">
       <span class="perm">host: web.whatsapp.com</span>
-      <p>Escreve a mensagem pronta na caixa de texto do grupo de motoboys escolhido pelo lojista, e lê apenas as mensagens novas (dos últimos 3 minutos) desse grupo, só para identificar pedidos de suporte como "não atende" ou "não encontrei o cliente". Histórico antigo e outras conversas não são lidos.</p>
+      <p><b>Modo grupo:</b> escreve a mensagem pronta na caixa de texto do grupo de motoboys escolhido pelo lojista, e lê apenas as mensagens novas (dos últimos 3 minutos) desse grupo, só para identificar pedidos de suporte como "não atende" ou "não encontrei o cliente". Histórico antigo e outras conversas não são lidos.</p>
+      <p><b>Modo individual</b> (loja sem grupo, só se o lojista escolher): lê a prévia da última mensagem que aparece na lista de conversas do WhatsApp Web, só para identificar quem escreveu "suporte" e o número completo de um pedido em entrega, e responde com o telefone do cliente na conversa dessa pessoa. A prévia é comparada na memória do navegador e descartada: nenhuma conversa é aberta para leitura, gravada ou enviada a servidor.</p>
     </div>
     <div class="grant-item">
       <span class="perm">debugger</span>
@@ -207,23 +208,23 @@
     </div>
     <div class="grant-item">
       <span class="perm">storage</span>
-      <p>Guarda as opções do lojista (nome do grupo, prazos de entrega) e os números dos pedidos já anunciados, para não repetir a mesma mensagem ao recarregar a página. Essas opções ficam no armazenamento do próprio Chrome, sincronizado pela conta Google do lojista, e não passam por nenhum servidor nosso.</p>
+      <p>Guarda as opções do lojista (nome do grupo, prazos de entrega) e os números dos pedidos já anunciados, para não repetir a mesma mensagem ao recarregar a página. Na aba do WhatsApp Web fica, por 3 minutos, um código de cada mensagem enviada (não o texto), para a mesma mensagem não sair duas vezes. Essas opções ficam no armazenamento do próprio Chrome, sincronizado pela conta Google do lojista, e não passam por nenhum servidor nosso.</p>
     </div>
     <div class="grant-item">
       <span class="perm">tabs</span>
-      <p>Encontra a aba do WhatsApp Web e a aba do Zé Delivery abertas no navegador, para passar mensagens entre o painel e o grupo.</p>
+      <p>Encontra a aba do WhatsApp Web e a aba do Zé Delivery abertas no navegador, para passar mensagens entre o painel e o WhatsApp.</p>
     </div>
   </div>
 
   <h2><span class="num">02</span>Dados de pedido e do cliente</h2>
   <p>
     O telefone do cliente <strong>não é buscado em todo pedido</strong>. Só quando existe um motivo real: o motoboy avisou
-    no grupo que não encontrou o cliente, ou o lojista confirmou isso clicando em "Sem contato" no painel. O telefone
+    no grupo (ou, no modo individual, na conversa com a loja) que não encontrou o cliente, ou o lojista confirmou isso clicando em "Sem contato" no painel. O telefone
     existe apenas na memória do navegador, o tempo necessário para montar a mensagem, e nunca é gravado em disco.
   </p>
   <p>
-    Nome, endereço e número do pedido aparecem nas mensagens que o próprio lojista manda ao grupo, como já acontecia
-    manualmente antes da extensão existir. Qualquer pessoa que já estivesse nesse grupo continua vendo essas informações,
+    Nome, endereço e número do pedido aparecem nas mensagens que o próprio lojista manda ao grupo (ou, no modo individual,
+    ao motoboy que pediu suporte), como já acontecia manualmente antes da extensão existir. Qualquer pessoa que já estivesse nesse grupo continua vendo essas informações,
     exatamente como via antes.
   </p>
 
@@ -232,7 +233,7 @@
     <li>Não envia pedidos, mensagens ou dados de clientes para servidores nossos ou de terceiros (o servidor recebe só o cadastro descrito no item 04).</li>
     <li>Não usa rastreadores, analytics de comportamento ou publicidade.</li>
     <li>Não vende, aluga nem compartilha dados com ninguém.</li>
-    <li>Não lê conversas fora do grupo de motoboys escolhido nas opções.</li>
+    <li>No modo grupo, não lê conversas fora do grupo de motoboys escolhido. No modo individual, só a prévia da lista de conversas, como explicado no item 01.</li>
     <li>Não guarda histórico de mensagens, só os números dos pedidos já anunciados, para evitar repetição.</li>
   </ul>
 
