@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Suporte Entrega</title>
-<meta name="description" content="Extensão do Chrome para parceiros do Zé Delivery: avisa os motoboys no WhatsApp sozinha, com ou sem grupo, cobra atraso, manda a rota, fala em voz alta na loja e entrega o telefone do cliente quando o motoboy pede suporte. 7 dias grátis.">
+<meta name="description" content="Extensão do Chrome para parceiros do Zé Delivery: avisa os motoboys no WhatsApp sozinha, com ou sem grupo, cobra atraso, entrega o telefone do cliente quando o motoboy pede suporte, controla o estoque, mostra os mais vendidos e calcula o adicional Turbo. 7 dias grátis.">
 <meta property="og:title" content="Suporte Entrega">
 <meta property="og:description" content="Suas entregas do Zé funcionando sozinhas, com ou sem grupo de motoboys. 7 dias grátis.">
 <meta property="og:image" content="https://emvixcomercio-creator.github.io/suporte-entrega/img/screenshot-painel.png">
 <link rel="icon" href="img/icone-128.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="estilo.css?v=5">
+<link rel="stylesheet" href="estilo.css?v=6">
 </head>
 <body>
 <header>
@@ -31,7 +31,7 @@
     <div>
       <span class="tag">Para parceiros do Zé Delivery</span>
       <h1>Suas entregas funcionando sozinhas, com ou sem grupo.</h1>
-      <p class="lead">O Suporte Entrega lê os pedidos do painel do Seu Zé e avisa o grupo do WhatsApp por você: pedido saindo, prazo quase estourando, atraso, rota do motoboy e o telefone do cliente quando o entregador não o encontra. Não usa grupo? No modo individual, a voz avisa a loja e o motoboy recebe o telefone do cliente no WhatsApp particular.</p>
+      <p class="lead">O Suporte Entrega lê os pedidos do painel do Seu Zé e avisa o grupo do WhatsApp por você: pedido saindo, prazo quase estourando, atraso, rota do motoboy e o telefone do cliente quando o entregador não o encontra. Não usa grupo? No modo individual, a voz avisa a loja e o motoboy recebe o telefone do cliente no WhatsApp particular. E ainda controla o estoque, mostra os mais vendidos da semana e calcula o adicional Turbo de cada motoboy.</p>
       <div class="acoes">
         <a class="btn pri" href="#" data-instalar>Instalar no Chrome</a>
         <a class="btn sec" href="#" data-zap>Falar no WhatsApp</a>
@@ -58,8 +58,8 @@ Entregador: Carlos<small>20:11</small></div>
 
   <section id="video" style="padding-top:8px">
     <div class="wrap" style="max-width:980px">
-      <h2 style="text-align:center">Veja funcionando (45 segundos)</h2>
-      <p class="sub" style="text-align:center;margin-left:auto;margin-right:auto">Pedido entrando, mensagem indo sozinha para o grupo, rota, telefone do cliente para o motoboy e aviso de atraso. Dados de exemplo.</p>
+      <h2 style="text-align:center">Veja funcionando (1 minuto)</h2>
+      <p class="sub" style="text-align:center;margin-left:auto;margin-right:auto">Pedido entrando, mensagem indo sozinha para o grupo, aviso de rota, telefone do cliente para o motoboy, atraso, estoque, mais vendidos e adicional Turbo. Dados de exemplo.</p>
       <video class="print" controls playsinline preload="metadata" poster="img/capa.jpg" width="1280" height="800" style="aspect-ratio:16/10">
         <source src="img/demo.mp4" type="video/mp4">
       </video>
@@ -76,19 +76,25 @@ Entregador: Carlos<small>20:11</small></div>
         <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8 9.8a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg></div>
           <h3>Telefone do cliente na hora</h3><p>O motoboy não achou o cliente? Ele escreve "suporte" e o número do pedido no grupo ou no WhatsApp da loja. A extensão busca o telefone no painel e responde em segundos, ali mesmo.</p></div>
         <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-          <h3>Aviso antes de atrasar</h3><p>Avisa o grupo quando o prazo de entrega está quase estourando, cobra o entregador pelo nome a cada 3 minutos quando o relógio fica vermelho e manda "ATRASO" quando passa, repetindo até o pedido ser entregue.</p></div>
+          <h3>Aviso antes de atrasar</h3><p>Avisa o grupo quando o relógio fica vermelho e o motoboy ainda não saiu, quando o prazo de entrega está quase estourando, cobra o entregador pelo nome a cada 3 minutos quando o relógio fica vermelho e manda "ATRASO" quando passa, repetindo até o pedido ser entregue.</p></div>
         <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
           <h3>Turbo com prazo próprio</h3><p>Pedidos Turbo têm prazos mais curtos (5 minutos para sair, 15 para entregar) e aparecem destacados no grupo.</p></div>
         <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 20l-5.4-2.7A1 1 0 013 16.4V4.6a1 1 0 011.4-.9L9 6m0 14l6-3m-6 3V6m6 11l4.6 2.3a1 1 0 001.4-.9V7.6a1 1 0 00-.6-.9L15 4m0 13V4m0 0L9 6"/></svg></div>
           <h3>Rota na hora certa</h3><p>Entrou um pedido perto de outro que ainda está em separação? A voz e o grupo avisam na hora para segurar o motoboy e sair com os dois juntos.</p></div>
         <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 010 7"/><path d="M18.5 5.5a9 9 0 010 13"/></svg></div>
           <h3>Aviso em voz alta</h3><p>Fala no computador da loja quando entra pedido, quando ele está para expirar e quando ainda não saiu no prazo. Ninguém precisa ficar olhando a tela.</p></div>
-        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div>
-          <h3>Relógio no vermelho? O grupo sabe</h3><p>Quando o relógio do pedido fica vermelho no Seu Zé e o motoboy ainda não saiu, o grupo recebe o aviso na hora para sair.</p></div>
         <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
           <h3>Com grupo ou sem grupo</h3><p>Você escolhe no painel amarelo. Com grupo, tudo vai para o grupo dos motoboys. Sem grupo, a voz avisa a loja e cada motoboy pede o telefone do cliente no particular. Configura em 2 minutos, com botões.</p></div>
         <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
           <h3>Não precisa ficar no grupo</h3><p>Use o WhatsApp normalmente, até pelo aplicativo do computador. A extensão abre o grupo sozinha, envia e volta para a conversa em que você estava.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></div>
+          <h3>Estoque que se controla sozinho</h3><p>Conte os produtos pelo nome ou pela planilha. Cada pedido dá baixa sozinho e o cancelado devolve. Se quiser, o que zerar fica indisponível no Zé e volta quando chega mercadoria. Mostra também o seu Portfólio Ideal.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20H2"/></svg></div>
+          <h3>Mais vendidos da semana</h3><p>Os 30 produtos que mais saíram nos últimos 7 dias, com unidades e pedidos. Se um deles ficar indisponível no Zé, a voz avisa na hora.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2.2 0 3 6 1.6 6 4.6 0 1.3-1.3 2.2-3 2.2-1.4 0-2.6-.6-3-1.6"/><path d="M12 6v2m0 8v2"/></svg></div>
+          <h3>Adicional Turbo na ponta do lápis</h3><p>Paga um valor a mais por Turbo entregue no prazo? A extensão confere pedido por pedido quem saiu em 5 e entregou em 15 minutos e mostra quanto pagar a cada motoboy, por dia ou por período. Só para a loja, não vai para o grupo.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M9 4v5"/><path d="M15 4v5"/></svg></div>
+          <h3>Tudo num painel só</h3><p>Abas de Pedidos (com a situação de cada um), Mensagens, Estoque, Mais vendidos e Turbo. Minimizado, mostra quantos estão em entrega, em separação e atrasados.</p></div>
       </div>
     </div>
   </section>
@@ -136,6 +142,8 @@ Entregador: Carlos<small>20:11</small></div>
           <li>Modo individual para loja sem grupo de motoboys</li>
           <li>Telefone do cliente quando o motoboy pede suporte</li>
           <li>Avisos em voz alta no computador da loja</li>
+          <li>Estoque com baixa por pedido e Portfólio Ideal</li>
+          <li>Mais vendidos da semana e adicional Turbo por motoboy</li>
           <li>Até 2 computadores com o mesmo e-mail</li>
           <li>Suporte pelo WhatsApp</li>
         </ul>
@@ -153,7 +161,9 @@ Entregador: Carlos<small>20:11</small></div>
       <details><summary>Como o motoboy pede o telefone do cliente?</summary><p>Com grupo: ele escreve no grupo a palavra "suporte" e o número do pedido (ou o primeiro nome do cliente). Sem grupo: ele manda no WhatsApp da loja a palavra "suporte" e o número completo do pedido. A extensão reconhece, busca o telefone no painel do Seu Zé e responde na mesma conversa.</p></details>
       <details><summary>Não tenho grupo de motoboys. Serve para mim?</summary><p>Serve. No painel amarelo, escolha o modo <b>Individual</b>. Nada é mandado em grupo: a voz avisa a loja quando entra pedido, quando ele está para expirar e quando ainda não saiu no prazo, e o motoboy pede o telefone do cliente no WhatsApp particular da loja. Por segurança, só vale o número completo de um pedido que está em entrega.</p></details>
       <details><summary>Por que aparece o aviso "começou a depurar este navegador"?</summary><p>O painel do Seu Zé só abre o contato do cliente com um clique de verdade. Para fazer esse clique, a extensão usa por alguns segundos um recurso do Chrome, que mostra esse aviso. Ele some sozinho quando a busca termina. A extensão não lê outras abas.</p></details>
-      <details><summary>E os pedidos de retirada no balcão?</summary><p>A extensão ignora sozinha os pedidos de retirada, em que o cliente busca na loja: eles não aparecem no painel, não vão para o grupo e não geram aviso de atraso.</p></details>
+      <details><summary>Como funciona o estoque?</summary><p>Na aba Estoque do painel amarelo, você conta os produtos digitando o nome ou pela planilha (a extensão gera a planilha com todos os seus produtos do Zé, você só preenche a quantidade). Cada pedido que entra dá baixa e o cancelado devolve. Ao lançar quantidade num produto indisponível, ele já fica disponível no Zé. Com a opção ligada, o que zerar fica indisponível sozinho. A contagem fica no seu computador.</p></details>
+      <details><summary>Como a extensão sabe o adicional Turbo de cada motoboy?</summary><p>Pelo histórico do próprio Seu Zé: para cada pedido Turbo, a hora em que entrou, em que saiu para entrega e em que foi entregue, e quem levou. Você define o valor por entrega e escolhe o período (hoje, ontem, 7 ou 15 dias). Clicando no motoboy, aparece cada entrega com os minutos. Tem também o botão Pago, para não pagar duas vezes.</p></details>
+      <details><summary>E os pedidos de retirada no balcão?</summary><p>A extensão ignora sozinha os pedidos de retirada, em que o cliente busca na loja: eles não aparecem no painel, não vão para o grupo e não geram aviso de atraso. No estoque, a retirada dá baixa normalmente.</p></details>
       <details><summary>Funciona em mais de um computador?</summary><p>Sim. Instale e use o mesmo e-mail em até 2 computadores da loja. Trocou de computador? Chame no WhatsApp que a gente libera.</p></details>
       <details><summary>O WhatsApp pode bloquear meu número?</summary><p>A extensão manda no máximo uma mensagem a cada 5 segundos, só no grupo da loja ou em resposta a quem pediu suporte. Se preferir, desligue o envio automático nas opções: ela só deixa o texto pronto e você aperta Enter.</p></details>
       <details><summary>E os dados dos meus clientes?</summary><p>Não saem do seu computador. Nome, endereço e telefone só vão para o grupo da própria loja ou para o motoboy que pediu suporte. O nosso servidor recebe apenas o e-mail da loja, para controlar o teste e a assinatura. Veja a <a href="privacidade.html">política de privacidade</a>.</p></details>

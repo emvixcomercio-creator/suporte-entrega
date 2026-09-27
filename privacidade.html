@@ -181,7 +181,7 @@
 <div class="page">
   <div class="eyebrow"><span class="dot"></span>Extensão para Chrome</div>
   <h1>Política de privacidade do Suporte Entrega</h1>
-  <p class="updated">Última atualização: 25 de setembro de 2026 · versão da extensão 0.4.6</p>
+  <p class="updated">Última atualização: 26 de setembro de 2026 · versão da extensão 0.4.7</p>
 
   <div class="lead">
     O Suporte Entrega ajuda o lojista a repassar pedidos do Zé Delivery aos motoboys pelo WhatsApp Web (num grupo ou, no modo individual, na conversa de quem pede),
@@ -195,7 +195,7 @@
   <div class="grant">
     <div class="grant-item">
       <span class="perm">host: seu.ze.delivery</span>
-      <p>Lê a lista de pedidos ativos e os dados da loja que já aparecem na tela do lojista, observando as respostas que o próprio painel do Zé recebe (GraphQL). A extensão não altera nada no Zé. A única requisição que ela faz é repetir a mesma consulta da lista de pedidos que o próprio painel já faz, quando um pedido novo aparece na tela antes de a lista ser atualizada, para o aviso não atrasar.</p>
+      <p>Lê a lista de pedidos ativos e os dados da loja que já aparecem na tela do lojista, observando as respostas que o próprio painel do Zé recebe (GraphQL). A extensão não altera nada no Zé. A única requisição que ela faz é repetir a mesma consulta da lista de pedidos que o próprio painel já faz, quando um pedido novo aparece na tela antes de a lista ser atualizada, para o aviso não atrasar. Para as abas "Mais vendidos" e "Em falta", faz também duas consultas só de leitura, no mesmo formato das consultas do próprio painel: o histórico de pedidos dos últimos 7 dias (número, situação e produtos com quantidade, sem dados do cliente) e se os produtos mais vendidos estão disponíveis no estoque do Zé. Para a aba "Estoque", lê o catálogo de produtos da loja no Zé (nome, código, código de barras, se está disponível e se é do Portfólio Ideal). A extensão só altera algo no Zé se o lojista ligar a opção "Deixar indisponível no Zé sozinho": aí, quando a contagem de um produto zera, ela o deixa indisponível no Zé, e o deixa disponível de novo quando entra mercadoria (só os que ela mesma desligou).</p>
     </div>
     <div class="grant-item">
       <span class="perm">host: web.whatsapp.com</span>
@@ -208,11 +208,11 @@
     </div>
     <div class="grant-item">
       <span class="perm">storage</span>
-      <p>Guarda as opções do lojista (nome do grupo, prazos de entrega) e os números dos pedidos já anunciados, para não repetir a mesma mensagem ao recarregar a página. Na aba do WhatsApp Web fica, por 3 minutos, um código de cada mensagem enviada (não o texto), para a mesma mensagem não sair duas vezes. Essas opções ficam no armazenamento do próprio Chrome, sincronizado pela conta Google do lojista, e não passam por nenhum servidor nosso.</p>
+      <p>Guarda as opções do lojista (nome do grupo, prazos de entrega) e os números dos pedidos já anunciados, para não repetir a mesma mensagem ao recarregar a página. Guarda também, só neste computador, o total vendido de cada produto por dia nos últimos 7 dias e a lista dos mais vendidos que ficaram indisponíveis, com o horário (nome do produto e quantidade, nenhum dado de cliente). Na aba Estoque, guarda a contagem de cada produto e o número dos pedidos que já deram baixa (para não baixar duas vezes), também sem dado de cliente. Na aba do WhatsApp Web fica, por 3 minutos, um código de cada mensagem enviada (não o texto), para a mesma mensagem não sair duas vezes. Essas opções ficam no armazenamento do próprio Chrome, sincronizado pela conta Google do lojista, e não passam por nenhum servidor nosso.</p>
     </div>
     <div class="grant-item">
       <span class="perm">tabs</span>
-      <p>Encontra a aba do WhatsApp Web e a aba do Zé Delivery abertas no navegador, para passar mensagens entre o painel e o WhatsApp.</p>
+      <p>Encontra a aba do WhatsApp Web e a aba do Zé Delivery abertas no navegador, para passar mensagens entre o painel e o WhatsApp. Durante a busca do telefone (fluxo "Sem contato"), traz a aba do Zé para a frente por alguns segundos, porque o Chrome não completa cliques numa aba escondida, e depois volta para a aba em que o lojista estava. Quando a extensão é atualizada, recarrega as abas do Zé e do WhatsApp para elas voltarem a funcionar.</p>
     </div>
   </div>
 
@@ -252,7 +252,7 @@
 
   <h2><span class="num">05</span>Onde os dados ficam</h2>
   <p>
-    Tudo fica no navegador Chrome do lojista: as opções e os pedidos já anunciados ficam em <code>chrome.storage</code>,
+    Tudo fica no navegador Chrome do lojista: as opções, os pedidos já anunciados e os totais de vendas por produto ficam em <code>chrome.storage</code>,
     sincronizados pela infraestrutura da própria Google junto com a conta do usuário no Chrome. O Suporte Entrega não
     guarda esses dados em servidor próprio. No servidor ficam só o e-mail, o nome da loja e os identificadores dos
     computadores cadastrados.

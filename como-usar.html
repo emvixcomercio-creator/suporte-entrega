@@ -43,7 +43,7 @@
   <div class="topo" style="padding-top:40px">
     <span class="tag">Passo a passo</span>
     <h1>Como usar o Suporte Entrega</h1>
-    <p class="lead" style="margin:0">Da instalação ao primeiro pedido avisado. Leva uns 5 minutos. <a href="./#video">Veja o vídeo de 45 segundos</a>.</p>
+    <p class="lead" style="margin:0">Da instalação ao primeiro pedido avisado. Leva uns 5 minutos. <a href="./#video">Veja o vídeo de 1 minuto</a>.</p>
   </div>
 
   <div class="guia">
@@ -54,8 +54,10 @@
       <a href="#motoboys">4. Combinar com os motoboys</a>
       <a href="#prazos">5. Prazos e voz</a>
       <a href="#dia">6. No dia a dia</a>
-      <a href="#assinar">7. Assinar</a>
-      <a href="#problemas">8. Se algo não funcionar</a>
+      <a href="#estoque">7. Estoque</a>
+      <a href="#turbo">8. Adicional Turbo</a>
+      <a href="#assinar">9. Assinar</a>
+      <a href="#problemas">10. Se algo não funcionar</a>
     </nav>
 
     <div>
@@ -93,7 +95,7 @@
           <li><b>Pronto, concluir</b>.</li>
         </ol>
         <p>Escolheu <b>Individual</b>? São só três botões: <b>Abrir WhatsApp Web</b> (deixe a aba conectada, é por ela que a extensão lê as mensagens dos motoboys), <b>Copiar o aviso</b> (cole e mande para cada motoboy) e <b>Pronto, concluir</b>.</p>
-        <p class="dica"><b>Depois disso</b>, o grupo não precisa ficar aberto: a extensão abre o grupo sozinha para mandar a mensagem e volta para a conversa em que você estava. Usa o WhatsApp pelo aplicativo do computador? Pode continuar usando: o WhatsApp Web fica conectado junto (leia o QR code uma vez no celular, em Aparelhos conectados), e se a aba dele for fechada a extensão abre de novo sozinha, fixada no canto. Para mudar alguma coisa, clique em <b>Configurar</b>, no rodapé do painel amarelo.</p>
+        <p class="dica"><b>Depois disso</b>, o grupo não precisa ficar aberto: a extensão abre o grupo sozinha para mandar a mensagem e volta para a conversa em que você estava. Usa o WhatsApp pelo aplicativo do computador? Pode continuar usando: o WhatsApp Web fica conectado junto (leia o QR code uma vez no celular, em Aparelhos conectados), e se a aba dele for fechada a extensão abre de novo sozinha, fixada no canto. Para mudar alguma coisa, abra a aba <b>Configurar</b>, a primeira do painel amarelo.</p>
       </section>
 
       <section class="etapa" id="motoboys">
@@ -119,17 +121,45 @@
 
       <section class="etapa" id="dia">
         <h2><span class="n">6</span>No dia a dia</h2>
+        <p>O painel amarelo tem abas:</p>
         <ul>
-          <li>O painel amarelo mostra os pedidos em andamento, com os botões <b>Enviar no grupo</b> e <b>Sem contato</b>, e as rotas de quem tem 2 ou mais pedidos. No modo individual, o botão <b>Sem contato</b> mostra o telefone do cliente no painel e já deixa copiado.</li>
-          <li>O painel pode ser <b>arrastado</b> pela faixa amarela para qualquer lugar da tela. Um clique na faixa abre e fecha.</li>
+          <li><b>Pedidos</b>: cada pedido em andamento com a situação (novo, em separação, em entrega ou atrasado) e os horários limite, com os botões <b>Enviar no grupo</b> e <b>Sem contato</b>. Os atrasados ficam no topo. No modo individual, o botão <b>Sem contato</b> mostra o telefone do cliente no painel e já deixa copiado.</li>
+          <li><b>Mensagens</b>: as 10 últimas coisas que foram para o grupo e que a voz falou, para conferir que está tudo certo.</li>
+          <li><b>Estoque</b>, <b>Mais vendidos</b> e <b>Turbo</b>: explicados logo abaixo.</li>
+          <li>O botão <b>↻</b> atualiza os pedidos, os mais vendidos e o estoque na hora.</li>
+          <li>O painel pode ser <b>arrastado</b> pela faixa amarela para qualquer lugar da tela. Um clique na faixa abre e fecha. Fechado, ela mostra quantos pedidos estão em entrega, em separação e atrasados.</li>
           <li>Na impressão do pedido o painel some sozinho, para não cobrir o QR code.</li>
           <li>Pedidos de <b>retirada no balcão</b> são ignorados: não aparecem no painel e não vão para o grupo.</li>
         </ul>
         <img class="print" src="img/screenshot-painel.png" width="1280" height="800" alt="Painel amarelo sobre a tela Pedidos Pendentes" loading="lazy">
       </section>
 
+      <section class="etapa" id="estoque">
+        <h2><span class="n">7</span>Estoque e Mais vendidos</h2>
+        <ol>
+          <li>Abra a aba <b>Estoque</b>. No topo aparece o seu <b>Portfólio Ideal</b> e quantos produtos do Zé a extensão leu.</li>
+          <li>Em <b>Contagem</b>, digite o nome do produto (por exemplo <code>brahma 473</code>), clique nele, informe a quantidade e clique em <b>Salvar</b>. Chegou mercadoria? Use <b>Entrada de mercadoria</b>, que soma ao que já tem.</li>
+          <li>Prefere planilha? Clique em <b>Baixar planilha</b>: vem com todos os seus produtos do Zé. Preencha só a coluna <b>Quantidade</b> dos que quer controlar e use <b>Importar planilha</b>.</li>
+          <li>Cada pedido que entra dá baixa sozinho, inclusive retirada, e o cancelado devolve. Ao lançar quantidade num produto indisponível, ele já fica disponível no Zé.</li>
+          <li>Quando a contagem estiver conferida, ligue <b>Deixar indisponível no Zé sozinho</b>: o que zerar some da vitrine e volta quando você lança a entrada.</li>
+        </ol>
+        <p>A aba <b>Mais vendidos</b> mostra os 30 produtos que mais saíram nos últimos 7 dias e se estão disponíveis no Zé. Se um deles ficar indisponível, a voz avisa.</p>
+      </section>
+
+      <section class="etapa" id="turbo">
+        <h2><span class="n">8</span>Adicional Turbo</h2>
+        <p>Para a loja que paga um valor a mais por Turbo entregue no prazo (sair em até 5 minutos e entregar em até 15, desde a entrada do pedido).</p>
+        <ol>
+          <li>Abra a aba <b>Turbo</b> e confira o valor por entrega (o padrão é R$ 2,00).</li>
+          <li>Escolha o período: <b>Hoje</b>, <b>Ontem</b>, <b>7 dias</b> ou <b>15 dias</b>. Aparece o total a pagar e o valor de cada motoboy.</li>
+          <li>Clique no motoboy para ver cada entrega, com os minutos para sair e para entregar.</li>
+          <li>Pagou? Clique em <b>Pago</b> para não pagar duas vezes.</li>
+        </ol>
+        <p class="dica">Essa aba é só para a loja: nada dela vai para o grupo.</p>
+      </section>
+
       <section class="etapa" id="assinar">
-        <h2><span class="n">7</span>Assinar depois do teste</h2>
+        <h2><span class="n">9</span>Assinar depois do teste</h2>
         <ol>
           <li>Quando os 7 dias acabarem, o painel amarelo mostra o valor e a <b>chave PIX</b>, com um botão para copiar.</li>
           <li>Faça o PIX e clique em <b>Mandar o comprovante no WhatsApp</b>.</li>
@@ -138,11 +168,12 @@
       </section>
 
       <section class="etapa" id="problemas">
-        <h2><span class="n">8</span>Se algo não funcionar</h2>
+        <h2><span class="n">10</span>Se algo não funcionar</h2>
         <ul>
           <li><b>O motoboy pediu suporte no particular e não recebeu nada:</b> confira se o modo <b>Individual</b> está escolhido, se a aba do WhatsApp Web está conectada e se ele mandou o número completo do pedido.</li>
-          <li><b>Não mandou nada no grupo:</b> confira se o WhatsApp Web está aberto no mesmo Chrome e se o nome do grupo está certo (botão <b>Configurar</b> no painel amarelo). Fixar o grupo no topo da lista de conversas ajuda.</li>
-          <li><b>O painel sumiu ou parou:</b> aperte <kbd>F5</kbd> na aba do Seu Zé e na do WhatsApp Web.</li>
+          <li><b>Não mandou nada no grupo:</b> confira se o WhatsApp Web está aberto no mesmo Chrome e se o nome do grupo está certo (aba <b>Configurar</b> no painel amarelo). Fixar o grupo no topo da lista de conversas ajuda.</li>
+          <li><b>O painel sumiu ou parou:</b> aperte <kbd>F5</kbd> na aba do Seu Zé e na do WhatsApp Web. Depois de uma atualização da extensão, as duas abas recarregam sozinhas.</li>
+          <li><b>Na aba Estoque aparece "Catálogo do Zé: 0 produtos":</b> clique no <b>↻</b> do painel. Se continuar, segure <kbd>Shift</kbd>, clique no <b>↻</b> e mande o diagnóstico copiado no WhatsApp.</li>
           <li><b>"Este e-mail já está em uso em 2 computadores":</b> chame no WhatsApp que a gente libera o computador novo.</li>
           <li>Qualquer outra dúvida: <a href="#" data-zap>fale com a gente no WhatsApp</a>.</li>
         </ul>
