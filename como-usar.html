@@ -49,6 +49,7 @@
   <div class="guia">
     <nav class="indice">
       <a href="#instalar">1. Instalar</a>
+      <a href="#windows">1. Ou: programa para Windows</a>
       <a href="#email">2. Entrar com o e-mail</a>
       <a href="#grupo">3. Configurar</a>
       <a href="#motoboys">4. Combinar com os motoboys</a>
@@ -67,6 +68,20 @@
           <li>No computador da loja, abra o <b>Google Chrome</b>.</li>
           <li>Clique em <a href="#" data-instalar>Instalar no Chrome</a> e, na página que abrir, em <b>Usar no Chrome</b> e depois em <b>Adicionar extensão</b>.</li>
           <li>Clique no ícone de quebra-cabeça, no canto de cima do Chrome, e no alfinete ao lado de <b>Suporte Entrega</b>. Assim o ícone fica sempre à vista.</li>
+        </ol>
+      </section>
+
+      <section class="etapa" id="windows">
+        <h2><span class="n">1</span>Ou: instalar o programa para Windows</h2>
+        <p>Prefere um programa com ícone na área de trabalho, que já abre o Seu Zé e o WhatsApp Web lado a lado? Use este caminho no lugar da extensão (não use os dois no mesmo computador).</p>
+        <ol>
+          <li>Clique em <a href="#" data-windows>Baixar para Windows</a> e abra o arquivo baixado (<b>SuporteEntrega-Instalar</b>).</li>
+          <li>Se o Windows mostrar a tela azul <b>"O Windows protegeu o computador"</b>, clique em <b>Mais informações</b>:
+            <img class="print" src="img/windows-aviso-1.png" width="534" height="500" alt="Tela azul do Windows com o link Mais informações marcado" loading="lazy" style="max-width:420px;margin-top:10px"></li>
+          <li>Depois clique em <b>Executar assim mesmo</b>. O aviso aparece porque o programa é novo para o Windows; o instalador é da Emvix Comércio Ltda.
+            <img class="print" src="img/windows-aviso-2.png" width="534" height="500" alt="Tela azul do Windows com o botão Executar assim mesmo marcado" loading="lazy" style="max-width:420px;margin-top:10px"></li>
+          <li>O programa instala e abre sozinho. Entre no <b>Seu Zé</b> com o login da loja e leia o <b>QR code do WhatsApp</b> com o celular da loja. É só uma vez.</li>
+          <li>Siga os passos 2 e 3 abaixo no painel amarelo, que aparece dentro do programa. Ele abre junto com o computador e se atualiza sozinho.</li>
         </ol>
       </section>
 
@@ -194,6 +209,8 @@
   // Link da Chrome Web Store fixo.
   const LOJA = 'https://chromewebstore.google.com/detail/phmobmdboihddlohabgilhokfeafllnl';
   document.querySelectorAll('[data-instalar]').forEach((a) => { a.href = LOJA; a.target = '_blank'; a.rel = 'noopener'; });
+  const WINDOWS = 'https://github.com/emvixcomercio-creator/suporte-entrega-versoes/releases/latest/download/SuporteEntrega-Instalar.exe';
+  document.querySelectorAll('[data-windows]').forEach((a) => { a.href = WINDOWS; });
   // No GitHub Pages o site é estático: preço e contato vêm do servidor da Render (que pode estar acordando).
   // Por isso mostra na hora os valores padrão e só depois atualiza com o que o dono salvou no /admin.
   const API = location.hostname.endsWith('onrender.com') || location.hostname === '127.0.0.1' ? '' : 'https://suporte-entrega.onrender.com';
