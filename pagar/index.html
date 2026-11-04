@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pagar o Suporte Entrega</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../img/icone-128.png">
+<!-- 04/11 (Edson: "conseguimos colocar o qr code?"): o cliente do Suporte Entrega sozinho paga pelo QR Code do PIX e a
+     licença ganha +30 dias sozinha (Mercado Pago, servidor /v1/suporte/pagar). Link: suporteentrega.com.br/pagar/?e=<e-mail> -->
+<style>
+  :root { --am: #f2c230; --esc: #1d1b16; --cinza: #6b6452; --verde: #1f7a3a; --verm: #b42318; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.45 "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; background: #f6f4ef; color: var(--esc); }
+  header { background: var(--esc); color: #fff; padding: 16px; text-align: center; font-weight: 800; }
+  main { max-width: 440px; margin: 0 auto; padding: 18px 16px 40px; }
+  .card { background: #fff; border: 1px solid #ebe6da; border-radius: 16px; padding: 18px; text-align: center; }
+  h1 { font-size: 20px; margin: 0 0 4px; } .sub { color: var(--cinza); font-size: 14px; }
+  .valor { font-size: 30px; font-weight: 900; margin: 10px 0 4px; }
+  .qr { width: 240px; max-width: 80vw; height: auto; display: block; margin: 12px auto; border: 1px solid #eee; border-radius: 12px; }
+  button { border: 2px solid var(--esc); background: #fff; border-radius: 12px; padding: 11px 14px; font: 700 15px inherit; cursor: pointer; width: 100%; margin-top: 6px; }
+  .ok { color: var(--verde); font-size: 22px; font-weight: 900; } .erro { color: var(--verm); font-weight: 700; }
+  input { width: 100%; padding: 12px; border: 1px solid #d8d2c2; border-radius: 10px; font: inherit; margin: 10px 0; }
+  .passos { text-align: left; font-size: 14px; color: var(--cinza); margin: 10px 0 0; padding-left: 20px; }
+  .esperando { font-size: 13px; color: var(--cinza); margin-top: 10px; }
+</style></head><body>
+<header>Suporte Entrega</header>
+<main><div class="card" id="tela">Carregando…</div></main>
+<script>
+  const API = new URLSearchParams(location.search).get('api') || 'https://suporte-entrega.onrender.com';
+  const $ = (i) => document.getElementById(i);
+  const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (x) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[x]));
+  let email = (new URLSearchParams(location.search).get('e') || '').trim().toLowerCase(), espera = null;
+  function pedirEmail(msg) {
+    $('tela').innerHTML = `<h1>Pagar o Suporte Entrega</h1><div class="sub">Digite o e-mail que você usa no Suporte Entrega.</div>
+      <input id="em" type="email" inputmode="email" placeholder="seu@email.com" value="${esc(email)}"><button id="ir">Ver o QR Code</button>${msg ? `<p class="erro">${esc(msg)}</p>` : ''}`;
+    $('ir').onclick = () => { email = $('em').value.trim().toLowerCase(); if (email) carregar(); };
+  }
+  async function carregar() {
+    let j;
+    try {
+      const r = await fetch(API + '/v1/suporte/pagar?e=' + encodeURIComponent(email));
+      j = await r.json().catch(() => ({}));
+      if (!r.ok) return pedirEmail(typeof j.detail === 'string' ? j.detail : 'Não deu para abrir agora. Tente de novo.');
+    } catch (_) { return pedirEmail('Sem internet? Tente de novo.'); }
+    const zap = j.whatsapp ? `<p class="sub">Dúvidas: WhatsApp ${esc(j.whatsapp)}</p>` : '';
+    if (j.pago) { clearInterval(espera); $('tela').innerHTML = `<div class="ok">✅ Pago!</div><h1>${esc(j.loja)}</h1><p>O Suporte Entrega está liberado até <b>${esc(j.ate)}</b>.</p><p class="sub">Não precisa fazer mais nada: o Suporte confere sozinho.</p>${zap}`; return; }
+    if (j.erro) { $('tela').innerHTML = `<h1>${esc(j.loja)}</h1><p class="erro">${esc(j.erro)}</p>${zap}`; return; }
+    $('tela').innerHTML = `<h1>${esc(j.loja)}</h1><div class="sub">${j.ate ? (j.vencida ? 'Venceu em ' : 'Vence em ') + esc(j.ate) : ''}</div>
+      <div class="valor">${esc(j.valor)}</div><div class="sub">30 dias de Suporte Entrega</div>
+      <img class="qr" alt="QR Code do PIX" src="data:image/png;base64,${esc(j.qrimg)}">
+      <ol class="passos"><li>Abra o app do seu banco e escolha <b>PIX &gt; Pagar com QR Code</b>.</li><li>Aponte a câmera para o QR Code.</li><li>Pagou, libera sozinho em poucos minutos.</li></ol>
+      <button id="copiar">Pagando pelo celular? Copiar o código PIX</button>
+      <div class="esperando" id="esp">Esperando o pagamento…</div>${zap}`;
+    $('copiar').onclick = () => navigator.clipboard.writeText(j.qr).then(() => { $('copiar').textContent = 'Código copiado: cole no app do banco (PIX Copia e Cola)'; }, () => {});
+    if (!espera) espera = setInterval(carregar, 15000);
+  }
+  if (email) carregar(); else pedirEmail('');
+</script>
+</body></html>
